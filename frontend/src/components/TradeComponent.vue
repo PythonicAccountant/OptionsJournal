@@ -27,12 +27,17 @@
       </v-card>
       <v-spacer></v-spacer>
       <v-expansion-panels>
-        <v-expansion-panel>
-          <v-expansion-panel-header>Details</v-expansion-panel-header>
-          <v-expansion-panel-content
-            v-for="trade_action in trade.trade_set"
-            :key="trade_action.id"
-          >{{trade_action.action_type}}</v-expansion-panel-content>
+        <v-expansion-panel v-for="trade_action in trade.trade_set" :key="trade_action.id">
+          <v-expansion-panel-header>{{trade_action.action_type_display}}</v-expansion-panel-header>
+          <v-expansion-panel-content>
+            <v-row>
+              <v-col :md="2" :sm="4">
+                <v-row
+                  class="execdate"
+                >Action Exec: {{formatDate(trade_action.action_executed_date)}}</v-row>
+              </v-col>
+            </v-row>
+          </v-expansion-panel-content>
         </v-expansion-panel>
       </v-expansion-panels>
     </v-container>

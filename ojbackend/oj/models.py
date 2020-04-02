@@ -54,7 +54,8 @@ class TradeAction(models.Model):
     ]
     created_date = models.DateField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now_add=True)
-    trade = models.ForeignKey(Trade, on_delete=models.CASCADE, related_name='trade_set')
+    action_executed_date = models.DateField()
+    trade = models.ForeignKey(Trade, on_delete=models.CASCADE, related_name="trade_set")
     amount = models.DecimalField(max_digits=6, decimal_places=2)
     action_type = models.CharField(max_length=50, choices=action_choices)
 

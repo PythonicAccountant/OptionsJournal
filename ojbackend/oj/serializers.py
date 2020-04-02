@@ -15,9 +15,18 @@ class UnderlyingSerializer(serializers.ModelSerializer):
 
 
 class TradeActionSerializer(serializers.ModelSerializer):
+    action_type_display = serializers.CharField(source='get_action_type_display')
+
     class Meta:
         model = TradeAction
-        fields = "__all__"
+        fields = [
+            "created_date",
+            "updated_date",
+            "action_executed_date",
+            "amount",
+            "action_type",
+            "action_type_display"
+        ]
 
 
 class TradeSerializer(serializers.ModelSerializer):

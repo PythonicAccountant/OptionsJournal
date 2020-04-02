@@ -58,7 +58,7 @@ ROOT_URLCONF = 'ojbackend.urls'
 CORS_ORIGIN_WHITELIST = (
     '172.26.123.162:8080',
     'localhost',
-    '127.0.0.1:8081',
+    '127.0.0.1:8080',
 )
 
 
