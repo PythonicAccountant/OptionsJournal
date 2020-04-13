@@ -48,7 +48,7 @@ class Trade(models.Model):
 
 class TradeAction(models.Model):
     action_choices = [
-        ("INT", "Initial"),
+        ("OPN", "Open"),
         ("ADJ", "Adjustment"),
         ("CLS", "Close"),
     ]
